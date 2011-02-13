@@ -1,0 +1,187 @@
+/*!
+ * copyright STRATEGIA V.I.C.
+ * @site http://strategia.su/
+ * @author Андрей Гусев <nex@stratero.ru>
+ * @author Александр Карпинский <homm@stratero.ru>
+ * @author Андрей Фролов <a.frolov@stratero.ru>
+ */
+ 
+.rocket-banner {
+ 	font-family: Arial;
+	overflow: hidden;
+	position: relative;
+	width: 700px; height: 374px;
+	margin-bottom: 20px;
+	z-index: 0;
+	background: #e0f0f8;
+}
+	.rocket-banner .button {
+		cursor: pointer;
+		overflow: hidden;
+		position: absolute;
+		top: 145px; left: 600px;
+		display: block;
+		width: 90px; height: 90px;
+		z-index: 100;
+	}
+		.rocket-banner .button .bg {
+			display: block;
+			width: 90px; height: 180px;
+			background: url('i/button.png');
+		}
+		* html .rocket-banner .button .bg {
+			background: none;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='i/button.png', sizingMethod = 'crop' );
+		}
+		.rocket-banner .button:hover .bg {
+			margin-top: -90px;
+		}
+		.rocket-banner .button:hover .text,
+		.rocket-banner .button .text {
+			color: white;
+			line-height: 22px;
+			font-size: 18px;
+			font-weight: bold;
+			text-decoration: none;
+			text-align: center;
+		}
+		.rocket-banner .button .text {
+			position: absolute;
+			top: 34px; left: 0;
+			padding: 0 10px;
+			width: 70px;
+		}
+		.rocket-banner .button_twoline {
+			display: none;
+		}
+		.rocket-banner .button_twoline .text {
+			top: 23px;
+		}
+	.rocket-banner .moon {
+		position: absolute;
+		top: 3px; left: 0;
+		display: block;
+		width: 186px; height: 186px;
+		background: url('i/moon.png');
+	}
+		* html .rocket-banner .moon {
+			background: none;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='i/moon.png', sizingMethod = 'crop' );
+		}
+	.rocket-banner .earth-land {
+		position: absolute;
+		top: 88px; left: 159px;
+		display: block;
+		width: 347px; height: 229px;
+		background: url('i/earth-land.png');
+	}
+		* html .rocket-banner .earth-land {
+			background: none;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='i/earth-land.png', sizingMethod = 'crop' );
+		}
+	.rocket-banner .moon-land {
+		position: absolute;
+		top: 210px; left: 249px;
+		display: none;
+		width: 341px; height: 105px;
+		background: url('i/moon-land.png');
+	}
+		* html .rocket-banner .moon-land {
+			background: none;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='i/moon-land.png', sizingMethod = 'crop' );
+		}
+	
+	.rocket-banner .cloud {
+		position: absolute;
+		display: none;
+		background: url('i/clouds.png');
+	}
+		.rocket-banner .cloud-1{ background-position: 0 0; width: 205px; height: 80px; }
+		.rocket-banner .cloud-2{ background-position: -215px 0; width: 182px; height: 59px; } 
+		.rocket-banner .cloud-3{ background-position: -407px 0; width: 157px; height: 50px; } 
+		.rocket-banner .cloud-4{ background-position: -574px 0; width: 161px; height: 62px; } 
+		.rocket-banner .cloud-5{ background-position: -745px 0; width: 161px; height: 63px; } 
+	
+	.rocket-banner .rocket {
+		position: absolute;
+		display: block;
+		z-index: 10;
+	}
+		.rocket-banner .rocket_smile {
+			top: 119px; left: 461px;
+			width: 136px; height: 222px;
+		}
+			.rocket-banner .rocket_smile .thing {
+				overflow: hidden;
+				position: absolute;
+				top: 0; left: 0;
+				display: none;
+				background: url('i/rocket_smile.png');
+				z-index: 5;
+			}
+			
+			.rocket-banner .rocket_smile .body{ background-position: 0 0; width: 136px; height: 222px; display: block; top:0; left: 0; z-index: 4; }
+			.rocket-banner .rocket_smile .ears-1{ background-position: -146px 0; width: 25px; height: 28px; top: 49px; left: 89px; display: block; }
+			.rocket-banner .rocket_smile .ears-2{ background-position: -181px 0; width: 29px; height: 25px; top: 69px; left: 93px; }
+			.rocket-banner .rocket_smile .ears-3{ background-position: -220px 0; width: 12px; height: 36px; top: 80px; left: 93px; }
+			.rocket-banner .rocket_smile .ears-4{ background-position: -242px 0; width: 20px; height: 32px; top: 79px; left: 93px; }
+			.rocket-banner .rocket_smile .ears-5{ background-position: -272px 0; width: 9px; height: 35px; top: 79px; left: 93px; }
+			.rocket-banner .rocket_smile .eyes{ background-position: -291px 0; width: 25px; height: 7px; display: block; top: 75px; left: 57px; }
+			.rocket-banner .rocket_smile .fire { top: 122px; left: 31px; z-index: 3; zoom: 1}
+			.rocket-banner .rocket_smile .fire-1{ background-position: -326px 0; width: 71px; height: 72px; }
+			.rocket-banner .rocket_smile .fire-2{ background-position: -407px 0; width: 71px; height: 72px; }
+			.rocket-banner .rocket_smile .fire-3{ background-position: -488px 0; width: 71px; height: 72px; }
+			.rocket-banner .rocket_smile .reflection{ background-position: -569px 0; width: 136px; height: 58px; top: 164px; left: 0; }
+			.rocket-banner .rocket_smile .shadow{ background-position: -715px 0; width: 130px; height: 25px; top: 196px; left: 3px; z-index: 2; }
+		
+		
+		.rocket-banner .rocket_atack {
+			display: none;
+			top: 83px; left: 127px;
+			width: 163px; height: 268px;
+		}
+			.rocket-banner .rocket_atack .thing {
+				overflow: hidden;
+				position: absolute;
+				top: 0; left: 0;
+				display: none;
+				background: url('i/rocket_atack.png');
+				z-index: 5;
+			}
+			
+			.rocket-banner .rocket_atack .body{ background-position: 0 0; width: 163px; height: 268px; display: block; top:0; left: 0; z-index: 4; } 
+			.rocket-banner .rocket_atack .eyes{ background-position: -173px 0; width: 25px; height: 7px; display: block; top: 85px; left: 69px; } 
+			.rocket-banner .rocket_atack .fire{ top: 242px; left: 48px; z-index: 3;}
+			.rocket-banner .rocket_atack .fire-1{ background-position: -208px 0; width: 71px; height: 72px; } 
+			.rocket-banner .rocket_atack .fire-2{ background-position: -289px 0; width: 71px; height: 72px; } 
+			.rocket-banner .rocket_atack .fire-3{ background-position: -370px 0; width: 71px; height: 72px; } 
+			.rocket-banner .rocket_atack .reflection{ background-position: -451px 0; width: 163px; height: 70px; top: 198px; left: 0; } 
+			.rocket-banner .rocket_atack .shadow{ background-position: -624px 0; width: 157px; height: 35px; top: 232px; left: 3px; z-index: 2; } 
+			.rocket-banner .rocket_atack .wink{ background-position: -791px 0; width: 47px; height: 15px; top: 81px; left: 58px; } 
+				
+			
+			/*.rocket-banner .rocket_atack .body{ background-position: 0 0; width: 163px; height: 268px; display: block; top:0; left: 0; z-index: 4;} 
+			.rocket-banner .rocket_atack .eyes{ background-position: -173px 0; width: 22px; height: 8px; display: block; top: 73px; left: 70px;}
+			.rocket-banner .rocket_atack .fire{ top: 242px; left: 48px; z-index: 3;}
+			.rocket-banner .rocket_atack .fire-1{ background-position: -205px 0; width: 71px; height: 72px; } 
+			.rocket-banner .rocket_atack .fire-2{ background-position: -286px 0; width: 71px; height: 71px; } 
+			.rocket-banner .rocket_atack .fire-3{ background-position: -367px 0; width: 71px; height: 71px; } 
+			.rocket-banner .rocket_atack .reflection{ background-position: -448px 0; width: 163px; height: 70px; top: 198px; left: 0;} 
+			.rocket-banner .rocket_atack .shadow{ background-position: -621px 0; width: 157px; height: 35px; top: 232px; left: 3px; z-index: 2;} 
+			.rocket-banner .rocket_atack .wink{ background-position: -788px 0; width: 41px; height: 50px; top: 76px; left: 62px;} 
+			*/
+
+
+		.rocket-banner .rocket_landed{}
+			.rocket-banner .rocket_landed .shadow,
+			.rocket-banner .rocket_landed .ears-1 {
+				display: block;
+			}
+		.rocket-banner .rocket_space{}
+			.rocket-banner .rocket_space .reflection {
+				display: block;
+			}
+		.rocket-banner  .rocket_wink {}
+			.rocket-banner  .rocket_wink .wink {
+				display: block;
+			}
