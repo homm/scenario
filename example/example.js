@@ -7,182 +7,191 @@ $(function() {
 		$start = $screen.find('.rocket-banner-start'),
 		$again = $screen.find('.rocket-banner-again');
 	
-	$start.click(function(e) {
-		var scenario = {
-				element: '#scenario',
-				child: [{
-					element: '.rocket_smile',
-					scene: [{
-						time: [0, 2500, 'easeInOutSine'],
-						before: { removeClass: 'rocket_landed', addClass: 'rocket_space' },
-						animate: { top: 69 }
-					},
-					{
-						time: [7600, 9000, 'easeInSine'],
-						animate: { top: -264 },
-						after: { removeClass: 'rocket_space', addClass: 'rocket_landed' }
-					}],
-					child: [{
-						element: '.fire',
-						scene: [{
-							time: [0, 1000, 'easeOutSine'],
-							animate: { top: 195 }
-						},
-						{
-							time: [0, 9000],
-							step: function(time) {
-								this.hide()
-									.eq((time / 100) % this.length)
-									.show();
-							},
-							after: { reset: '' }
-						}]
-					},
-					{
-						element: '.eyes',
-						scene: [{
-							time: [2200, 2700],
-							animate: { top: 79, left: 50 }
-						},
-						{
-							time: [2700, 4000],
-							animate: { top: 75 }
-						},
-						{
-							time: [7000, 7500],
-							animate: { left: 57 }
-						}]
-					},
-					{
-						element: '.ears-1',
-						time: [150, 9000],
-						before: { hide: '' },
-						after: { show: '' }
-					},
-					{
-						element: '.ears-2',
-						time: [150, 300],
-						before: { show: '' },
-						after: { hide: '' }
-					},
-					{
-						element: '.ears',
-						time: [300, 9000],
-						step: function(time, o, scene) {
-							this.hide()
-								.eq((time / 30) % this.length)
-								.show();
-						},
-						after: { hide: '' }
-					}]
+	var scenario = {
+			element: '#scenario',
+			child: [{
+				element: '.rocket_smile',
+				scene: [{
+					time: [0, 2500, 'easeInOutSine'],
+					before: { removeClass: 'rocket_landed', addClass: 'rocket_space' },
+					animate: { top: 69 }
 				},
 				{
-					element: '.rocket_atack',
+					time: [7600, 9000, 'easeInSine'],
+					animate: { top: -264 },
+					after: { removeClass: 'rocket_space', addClass: 'rocket_landed' }
+				}],
+				child: [{
+					element: '.fire',
 					scene: [{
-						time: [2500, 4000],
-						before: { top: 370, show: '', removeClass: 'rocket_landed', addClass: 'rocket_space' },
-						animate: { top: 32 }
+						time: [0, 1000, 'easeOutSine'],
+						animate: { top: 195 }
 					},
 					{
-						time: [5500, 6500],
-						before: { addClass: 'rocket_wink' },
-						after: { removeClass: 'rocket_wink' }
-					},
-					{
-						time: [7000, 8000, 'easeInSine'],
-						animate: { top: -320 },
-						after: { removeClass: 'rocket_space', addClass: 'rocket_landed' }
-					}],
-					child: [{
-						element: '.fire',
-						time: [2500, 8000],
+						time: [0, 9000],
 						step: function(time) {
 							this.hide()
 								.eq((time / 100) % this.length)
 								.show();
 						},
-						after: { hide: '' }
-					},
-					{
-						element: '.eyes',
-						scene: [{
-							time: [2500, 4000],
-							before: { top: 82, left: 74 },
-							animate: { top: 85 }
-						},
-						{
-							time: [7000, 8000],
-							animate: { top: 89 },
-							after: { left: '', top: '' }
-						}]
+						after: { reset: '' }
 					}]
 				},
 				{
-					element: '.rocket_smile, .rocket_atack, .moon-land',
-					time: [9500, 10000],
-					before: { opacity: 0, show: '', top: '' },
-					animate: { opacity: 1 },
-					after: { opacity: '' }
-				},
-				{
-					element: '.moon',
-					time: [0, 500, 'easeInSine'],
-					animate: { top: -186 },
-					after: { display: 'none' }
-				},
-				{
-					element: '.earth-land',
-					time: [0, 3000, 'easeInSine'],
-					animate: { top: 603 },
-					after: { display: 'none' }
-				},
-				{
-					element: '.cloud',
-					child: [{
-						element: ['eq', 0],
-						time: [2500, 8000, 'linear'],
-						before: { top: -80, display: 'block', left: 100 },
-						animate: { top: 374 }
+					element: '.eyes',
+					scene: [{
+						time: [2200, 2700],
+						animate: { top: 79, left: 50 }
 					},
 					{
-						element: ['eq', 1],
-						time: [4000, 9000, 'linear'],
+						time: [2700, 4000],
+						animate: { top: 75 }
+					},
+					{
+						time: [7000, 7500],
+						animate: { left: 57 }
+					}]
+				},
+				{
+					element: '.ears-1',
+					time: [150, 9000],
+					before: { hide: '' },
+					after: { show: '' }
+				},
+				{
+					element: '.ears-2',
+					time: [150, 300],
+					before: { show: '' },
+					after: { hide: '' }
+				},
+				{
+					element: '.ears',
+					time: [300, 9000],
+					step: function(time, o, scene) {
+						this.hide()
+							.eq((time / 30) % this.length)
+							.show();
+					},
+					after: { hide: '' }
+				}]
+			},
+			{
+				element: '.rocket_atack',
+				scene: [{
+					time: [2500, 4000],
+					before: { top: 370, show: '', removeClass: 'rocket_landed', addClass: 'rocket_space' },
+					animate: { top: 32 }
+				},
+				{
+					time: [5500, 6500],
+					before: { addClass: 'rocket_wink' },
+					after: { removeClass: 'rocket_wink' }
+				},
+				{
+					time: [7000, 8000, 'easeInSine'],
+					animate: { top: -320 },
+					after: { removeClass: 'rocket_space', addClass: 'rocket_landed' }
+				}],
+				child: [{
+					element: '.fire',
+					time: [2500, 8000],
+					step: function(time) {
+						this.hide()
+							.eq((time / 100) % this.length)
+							.show();
+					},
+					after: { hide: '' }
+				},
+				{
+					element: '.eyes',
+					scene: [{
+						time: [2500, 4000],
+						before: { top: 82, left: 74 },
+						animate: { top: 85 }
+					},
+					{
+						time: [7000, 8000],
+						animate: { top: 89 },
+						after: { left: '', top: '' }
+					}]
+				}]
+			},
+			{
+				element: '.rocket_smile, .rocket_atack, .moon-land',
+				time: [9500, 10000],
+				before: { opacity: 0, show: '', top: '' },
+				animate: { opacity: 1 },
+				after: { opacity: '' }
+			},
+			{
+				element: '.moon',
+				time: [0, 500, 'easeInSine'],
+				animate: { top: -186 },
+				after: { display: 'none' }
+			},
+			{
+				element: '.earth-land',
+				time: [0, 3000, 'easeInSine'],
+				animate: { top: 603 },
+				after: { display: 'none' }
+			},
+			{
+				element: '.cloud',
+				child: [{
+					element: ['eq', 0],
+					time: [2500, 8000, 'linear'],
+					before: { top: -80, display: 'block', left: 100 },
+					animate: { top: 374 }
+				},
+				{
+					element: ['eq', 1],
+					time: [4000, 9000, 'linear'],
+					before: { top: -80, display: 'block', left: 500 },
+					animate: { top: 374 }
+				},
+				{
+					element: ['eq', 2],
+					time: [0, 7500, 'linear'],
+					before: { top: -80, display: 'block', left: 300 },
+					animate: { top: 374 }
+				},
+				{
+					element: ['eq', 3],
+					scene: [{
+						time: [2500, 5500, 'linear'],
 						before: { top: -80, display: 'block', left: 500 },
 						animate: { top: 374 }
 					},
 					{
-						element: ['eq', 2],
-						time: [0, 7500, 'linear'],
-						before: { top: -80, display: 'block', left: 300 },
+						time: [5500, 9000, 'linear'],
+						before: { top: -80, display: 'block', left: 150 },
 						animate: { top: 374 }
-					},
-					{
-						element: ['eq', 3],
-						scene: [{
-							time: [2500, 5500, 'linear'],
-							before: { top: -80, display: 'block', left: 500 },
-							animate: { top: 374 }
-						},
-						{
-							time: [5500, 9000, 'linear'],
-							before: { top: -80, display: 'block', left: 150 },
-							animate: { top: 374 }
-						}]
 					}]
 				}]
+			}]
+		};
+	
+	$start.click(function(e) {
+		$start.hide();
+		var options = {
+				complete: function(time) {
+					$again.show();
+				}
 			};
 		
-		$start.hide();
-		
-		$.scenario(scenario, {
-			complete: function(time) {
-				$again.show();
-			}
-//			, startTime: 5500
-//			, endTime: 6500
-//			, acceleration: .3
-			, interval: 13
+		$('#controls').each(function() {
+			var $form = $(this).find('form');
+			var start = parseInt($form.find('[name="start"]').val());
+			var end = parseInt($form.find('[name="end"]').val());
+			var acceleration = parseFloat($form.find('[name="acceleration"]').val());
+			var interval = parseInt($form.find('[name="fps"]').val());
+			start && (options.startTime = start);
+			end && (options.endTime = end);
+			acceleration && (options.acceleration = acceleration);
+			interval && (options.interval = interval);
 		});
+		
+		$.scenario(scenario, options);
 		
 		e.preventDefault();
 	});
@@ -246,7 +255,7 @@ $(function() {
 					$(this).hide();
 				}
 			});
-				
+		
 		// сохраняем огонь, чтобы получить к нему доступ не выбирая каждый раз
 		var $rocket_smile = $screen
 			.find('.rocket_smile')

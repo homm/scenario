@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<title>Scenario</title>
+	<link href='example.css' rel='stylesheet' type='text/css' media='all' />
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.5.min.js'></script>
+	<script type='text/javascript' src='easing.js'></script>
+	<script type='text/javascript' src='../scenario.js'></script>
+	<script type='text/javascript' src='example.js'></script>
+</head>
+<body>
+	<div class='rocket-banner' id='scenario'>
+		<a class='rocket-banner-start button' href='#'>
+			<b class='bg'></b>
+			<span class='text'>Пуск</span>
+		</a>
+		<a class='rocket-banner-again button button_twoline' href='#'>
+			<b class='bg'></b>
+			<span class='text'>Еще раз</span>
+		</a>
+		<div class='moon'></div>
+		<div class='earth-land'></div>
+		<div class='moon-land'></div>
+		<div class='moon-land'></div>
+		<div class='cloud cloud-1'></div>
+		<div class='cloud cloud-2'></div>
+		<div class='cloud cloud-3'></div>
+		<div class='cloud cloud-4'></div>
+		<div class='cloud cloud-5'></div>
+		<div class='rocket rocket_smile rocket_landed'>
+			<div class='thing body'></div>
+			<div class='thing ears-1'></div>
+			<div class='thing ears-2'></div>
+			<div class='thing ears ears-3'></div>
+			<div class='thing ears ears-4'></div>
+			<div class='thing ears ears-5'></div>
+			<div class='thing eyes'></div>
+			<div class='thing fire fire-1'></div>
+			<div class='thing fire fire-2'></div>
+			<div class='thing fire fire-3'></div>
+			<div class='thing reflection'></div>
+			<div class='thing shadow'></div>
+		</div>
+		<div class='rocket rocket_atack rocket_landed'>
+			<div class='thing body'></div>
+			<div class='thing eyes'></div>
+			<div class='thing fire fire-1'></div>
+			<div class='thing fire fire-2'></div>
+			<div class='thing fire fire-3'></div>
+			<div class='thing reflection'></div>
+			<div class='thing shadow'></div>
+			<div class='thing wink'></div>
+		</div>
+	</div>
+	<div id="controls" class="controls">
+		<form>
+			<p>Время начала анимации</p>
+			<p><select name="start">
+				<option value="">С самого начала</option>
+				<option value="500">0,5с</option>
+				<option value="1000">1с</option>
+				<option value="1500">1,5с</option>
+				<option value="2000">2с</option>
+				<option value="2500">2,5с</option>
+				<option value="3000">3с</option>
+				<option value="3500">3,5с</option>
+				<option value="4000">4с</option>
+				<option value="4500">4,5с</option>
+				<option value="5000">5с</option>
+				<option value="5500">5,5с</option>
+				<option value="6000">6с</option>
+				<option value="6500">6,5с</option>
+				<option value="7000">7с</option>
+				<option value="7500">7,5с</option>
+				<option value="8000">8с</option>
+				<option value="8500">8,5с</option>
+				<option value="9000">9с</option>
+				<option value="9500">9,5с</option>
+			</select></p>
+			
+			<p>Время окончания анимации</p>
+			<p><select name="end">
+				<option value="">До самого конца</option>
+				<option value="500">0,5с</option>
+				<option value="1000">1с</option>
+				<option value="1500">1,5с</option>
+				<option value="2000">2с</option>
+				<option value="2500">2,5с</option>
+				<option value="3000">3с</option>
+				<option value="3500">3,5с</option>
+				<option value="4000">4с</option>
+				<option value="4500">4,5с</option>
+				<option value="5000">5с</option>
+				<option value="5500">5,5с</option>
+				<option value="6000">6с</option>
+				<option value="6500">6,5с</option>
+				<option value="7000">7с</option>
+				<option value="7500">7,5с</option>
+				<option value="8000">8с</option>
+				<option value="8500">8,5с</option>
+				<option value="9000">9с</option>
+				<option value="9500">9,5с</option>
+			</select></p>
+			
+			<p>Скорость воспроизведения</p>
+			<p><select name="acceleration">
+				<option value="">нормальная скорость</option>
+				<option value="0.1">× 0,1</option>
+				<option value="0.2">× 0,2</option>
+				<option value="0.3">× 0,3</option>
+				<option value="0.5">× 0,5</option>
+				<option value="0.7">× 0,7</option>
+				<option value="0.9">× 0,9</option>
+				<option value="1">× 1</option>
+				<option value="1.1">× 1,1</option>
+				<option value="1.2">× 1,2</option>
+				<option value="1.4">× 1,4</option>
+				<option value="1.5">× 1,5</option>
+				<option value="1.8">× 1,8</option>
+				<option value="2">× 2</option>
+				<option value="2.5">× 2,5</option>
+				<option value="3">× 3</option>
+				<option value="4">× 4</option>
+				<option value="6">× 5</option>
+				<option value="8">× 6</option>
+				<option value="10">× 7</option>
+			</select></p>
+			
+			<p>Кадров в секунду (примерно)</p>
+			<p><select name="fps">
+				<option value="">По умолчанию (30)</option>
+				<option value="1">Максимум</option>
+				<option value="13">77 (по умолчанию в jQuery)</option>
+				<option value="20">50</option>
+				<option value="33">30</option>
+				<option value="40">25</option>
+				<option value="50">20</option>
+				<option value="59">17</option>
+				<option value="67">15</option>
+				<option value="100">10</option>
+				<option value="200">5</option>
+			</select></p>
+		</form>
+	</div>
+</body>
+</html>

@@ -185,3 +185,9 @@
 			.rocket-banner  .rocket_wink .wink {
 				display: block;
 			}
+
+.controls {
+	position: absolute;
+	left: 720px;
+	top: 0;
+}
