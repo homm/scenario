@@ -211,7 +211,6 @@
 							}
 							
 							if (scene.step) {
-								o.now = start + scene.time[0] + (o.duration * o.position);
 								scene.step.call(scene.element, time, o, scene);
 							}
 						}
